@@ -1,0 +1,523 @@
+{
+	"info": {
+		"_postman_id": "d0c6c208-c801-4052-8645-14c12e56e116",
+		"name": "KelaskuAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26806001"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Friendship",
+					"item": [
+						{
+							"name": "Request Friendship",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"uuid": "ea338a19-537b-4e10-adea-d57d6de6ee03"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 2|QZOpLx2kflivCs3Z7iCTHZhcxm3txZBw5sBtPZW7e85f50f1",
+										"type": "text",
+										"uuid": "f717c035-3b5e-4f70-b5da-aae6e940060a"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/users/request-friendship/06f1af0f-723c-4a48-b3bc-c4a3b4cb4b70",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"request-friendship",
+										"06f1af0f-723c-4a48-b3bc-c4a3b4cb4b70"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Request Friendship",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"uuid": "5a8ccc16-ce06-4689-861a-bf37bdb49706"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 7|OrHsQXaXtqD19cR5gQkEkw0RjBEe3aZY7XF6euWvcd2f0700",
+										"type": "text",
+										"uuid": "cf195501-720f-4fa8-bed7-c76fb44df41e"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/users/request-friendship/request",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"request-friendship",
+										"request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Accept Friendship",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"uuid": "a10d76bd-9a9b-49fd-b85f-d31a5b80a6d2"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 7|OrHsQXaXtqD19cR5gQkEkw0RjBEe3aZY7XF6euWvcd2f0700",
+										"type": "text",
+										"uuid": "2f451434-f9aa-4b9c-9de8-1ae8686eac49"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/users/request-friendship/accept/841ebeb8-67c3-4bff-9596-f83efac514a9",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"request-friendship",
+										"accept",
+										"841ebeb8-67c3-4bff-9596-f83efac514a9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "My Relationship",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"uuid": "5fa1d7cc-245a-40d0-8ccd-be4902e5c590"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 2|Tvkx4923D4eNZwZccqWc60T38nW3mw5ICKfGAQADe9bc5417",
+										"type": "text",
+										"uuid": "3342b8a2-b48c-4436-9507-8f42675c01d6"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/users/friendship",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"friendship"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reject Friendship",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"uuid": "4dadc666-6530-4497-8f98-3494b6a276ee"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 6|G2DE0vxVAyY3YmUh1Wjv6sgLVTRMtZQJiQrOQwHJbf13ebc1",
+										"type": "text",
+										"uuid": "f2bff313-fea0-401d-a5e5-c14398680697"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/users/request-friendship/reject/ac632fbd-9ab5-41b2-8643-01704c374954",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"request-friendship",
+										"reject",
+										"ac632fbd-9ab5-41b2-8643-01704c374954"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"For Susilo\",\r\n    \"school_id\": \"8e99e7b5-3945-4647-9c0f-861d9aa3f905\",\r\n    \"phone_number\": \"098765432112\",\r\n    \"password\": \"412t$G700\",\r\n    \"password_confirmation\": \"412t$G700\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone_number\": \"098765432109\",\r\n    \"password\": \"*9&76sA3\",\r\n    \"regid\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"uuid": "72ef6c67-bd18-44cf-b651-e4d891cfd31f"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|Tvkx4923D4eNZwZccqWc60T38nW3mw5ICKfGAQADe9bc5417",
+								"type": "text",
+								"uuid": "b71fe0e1-9045-4731-bc01-341e9349e09d"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"uuid": "c062843c-6ee2-48a7-9b11-01d92836aeca"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 6|2CPk8gFUtDyiw5LyRms2TFnBQ95SVN4WFyLa2BnYe87db4cc",
+								"type": "text",
+								"uuid": "c04ed387-6beb-40c6-8e43-763f644900c0"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ikhsandi Saktiawan",
+									"type": "text"
+								},
+								{
+									"key": "school_id",
+									"value": "8e99e7b5-3945-4647-9c0f-861d9aa3f905",
+									"type": "text"
+								},
+								{
+									"key": "profile",
+									"type": "file",
+									"src": "/C:/Users/user/Pictures/JokoBondo.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/profile/update",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"profile",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"uuid": "c973916b-ace7-4190-b9d6-9b49b1f89288"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|Tvkx4923D4eNZwZccqWc60T38nW3mw5ICKfGAQADe9bc5417",
+								"type": "text",
+								"uuid": "8fb349af-e116-474d-9385-187c87c85ecf"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_password\": \"*9&76sA3\",\r\n    \"new_password\": \"1@#4SgT8\",\r\n    \"new_password_confirmation\": \"1@#4SgT8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/update-password",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MyFriend Biodata",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"uuid": "e3b668ce-649e-4580-a84c-3cbb8ed9672f"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|Tvkx4923D4eNZwZccqWc60T38nW3mw5ICKfGAQADe9bc5417",
+								"type": "text",
+								"uuid": "b1d382dc-a9d2-4fe9-9cc6-bd1d6e9bab1a"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/friendship/details/06f1af0f-723c-4a48-b3bc-c4a3b4cb4b70",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"friendship",
+								"details",
+								"06f1af0f-723c-4a48-b3bc-c4a3b4cb4b70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Colek",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"uuid": "334d2b21-05c0-4579-a5b7-b6d31958b9c1"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 4|mJNHwSwYNWRiqY3HsYXZLzThIbR3u3rMumDsw3awefe1b4c1",
+								"type": "text",
+								"uuid": "8d8f475a-169a-4aff-883c-c9facd5c5387"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/colek?regId=123",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"colek"
+							],
+							"query": [
+								{
+									"key": "regId",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

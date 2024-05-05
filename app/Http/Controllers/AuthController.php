@@ -36,7 +36,7 @@ class AuthController extends Controller
         ], $validateMsg);
 
         if ($validation->fails()) {
-            return Helper::APIResponse('error validation', 400, null, $validation->errors());
+            return Helper::APIResponse('error validation', 422, null, $validation->errors());
         }
 
         $password = Hash::make($req->password);
@@ -60,7 +60,7 @@ class AuthController extends Controller
         ]);
 
         if ($validation->fails()) {
-            return Helper::APIResponse('error validation', 402, $validation->errors(), null);
+            return Helper::APIResponse('error validation', 422, $validation->errors(), null);
         }
 
         $user = User::where('phone_number', $req->phone_number)->first();
@@ -70,7 +70,7 @@ class AuthController extends Controller
         }
 
         if (!Hash::check($req->password, $user->password)) {
-            return Helper::APIResponse('password not match', 400, 'error password validate', null);
+            return Helper::APIResponse('password not match', 422, 'error password validate', null);
         }
 
         $user['token'] = $user->createToken('user_token')->plainTextToken;
@@ -105,13 +105,13 @@ class AuthController extends Controller
         ], $validateMsg);
 
         if ($validation->fails()) {
-            return Helper::APIResponse('error validation', 402, $validation->errors(), null);
+            return Helper::APIResponse('error validation', 422, $validation->errors(), null);
         }
 
         $user = User::where('id', Auth::user()->id)->first();
 
         if (!Hash::check($req->old_password, $user->password)) {
-            return Helper::APIResponse('password not match', 400, 'error password validate', null);
+            return Helper::APIResponse('password not match', 422, 'error password validate', null);
         }
 
         $user->password = Hash::make($req->new_password);

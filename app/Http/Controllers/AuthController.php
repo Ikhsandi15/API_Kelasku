@@ -73,8 +73,10 @@ class AuthController extends Controller
             return Helper::APIResponse('password not match', 422, 'error password validate', null);
         }
 
+        $user->regId = $req->regid;
+        $user->save();
+
         $user['token'] = $user->createToken('user_token')->plainTextToken;
-        $user['regId'] = $req->regid;
 
         return Helper::APIResponse('Login Success', 200, null, $user);
     }
@@ -82,6 +84,11 @@ class AuthController extends Controller
     public function logout(Request $req)
     {
         $req->user()->currentAccessToken()->delete();
+
+        $user = User::where('id', Auth::user()->id)->first();
+        $user->regId = null;
+        $user->save();
+
         return Helper::APIResponse('Logout Success', 200, null, null);
     }
 

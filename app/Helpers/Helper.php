@@ -9,7 +9,7 @@ class Helper
         return response()->json([
             'code' => $resCode,
             'msg' => $message,
-            'errors' => [$error],
+            'error' => [$error],
             'data' => [...$data]
         ], $resCode);
     }

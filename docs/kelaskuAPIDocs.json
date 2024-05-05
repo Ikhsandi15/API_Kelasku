@@ -1,0 +1,375 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "API Kelasku",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.server.test/v1"
+        }
+    ],
+    "paths": {
+        "/auth/register": {
+            "post": {
+                "summary": "User Register",
+                "description": "User Register",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "school_id": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "phone_number": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "required": true,
+                                        "minLength": 8
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string",
+                                        "required": true,
+                                        "minLength": 8
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success to register",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer"
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer"
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "summary": "User Login",
+                "description": "User login",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "phone_number": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "regid": {
+                                        "type": "string",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer"
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "regId": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "phone_number": {
+                                                        "type": "string"
+                                                    },
+                                                    "profile": {
+                                                        "type": "string"
+                                                    },
+                                                    "school_id": {
+                                                        "type": "string"
+                                                    },
+                                                    "role": {
+                                                        "type": "string"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string"
+                                                    },
+                                                    "token": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Error validation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer"
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Data Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer"
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/logout": {
+            "post": {
+                "summary": "User Logout",
+                "description": "User Logout",
+                "requestBody": {},
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Token otentikasi Sanctum",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success logout",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer"
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Error validation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer"
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "summary": "Get all user",
+                "description": "Get All",
+                "responses": {
+                    "200": {
+                        "description": "Success get all data exist or not",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "integer"
+                                        },
+                                        "msg": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/profile": {
+            "post": {
+                "summary": "Update data user",
+                "description": "Update data user",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

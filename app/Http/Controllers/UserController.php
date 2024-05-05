@@ -38,7 +38,7 @@ class UserController extends Controller
         ]);
 
         if ($validation->fails()) {
-            return Helper::APIResponse('Error Validation', 402, $validation->errors(), null);
+            return Helper::APIResponse('Error Validation', 422, $validation->errors(), null);
         }
 
         $user = Auth::user();

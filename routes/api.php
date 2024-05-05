@@ -20,7 +20,7 @@ Route::prefix('/users')->group(function () {
 
         Route::middleware('auth:sanctum')->group(function () {
             Route::get('/profile', 'profile');
-            Route::post('/profile/update', 'update');
+            Route::put('/profile/update', 'update');
             Route::prefix('/friendship')->group(function () {
                 Route::post('/{target_id}', 'requestFriendship');
                 Route::get('/request', 'getAllRequestFriendship');

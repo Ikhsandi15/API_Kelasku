@@ -9,4 +9,8 @@ $ git clone git@github.com:Ikhsandi15/API_Kelasku.git
 ```bash
 $ composer install
 ```
-3. You can see API Documentation in folder docs
+3.
+```bash
+$ cp .env.example .env
+```
+4. You can see API Documentation in folder docs

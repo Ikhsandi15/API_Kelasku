@@ -15,8 +15,8 @@ class Friendship extends Model
 
     protected $fillable = [
         'id',
-        'request_friendship',
-        'accept_friendship',
+        'user_id',
+        'friend_id',
         'status'
     ];
 

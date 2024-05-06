@@ -36,6 +36,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'created_at',
+        'updated_at',
+        'pivot'
     ];
 
     /**
@@ -51,8 +54,22 @@ class User extends Authenticatable
         ];
     }
 
-    public function friendship()
+    public function school()
     {
-        return $this->belongsToMany(User::class, 'friendships', 'accept_friendship', 'request_friendship');
+        return $this->belongsTo(School::class, 'school_id', 'id');
+    }
+
+    public function friendsOfMine($status)
+    {
+        return $this->belongsToMany(User::class, 'friendships', 'user_id', 'friend_id')
+            ->wherePivot('status', $status)
+            ->withPivot('status');
+    }
+
+    public function friendOf($status)
+    {
+        return $this->belongsToMany(User::class, 'friendships', 'friend_id', 'user_id')
+            ->wherePivot('status', $status)
+            ->withPivot('status');
     }
 }

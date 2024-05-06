@@ -113,13 +113,10 @@ class UserController extends Controller
         $friendsOfMine = $user->friendsOfMine('pending')->get();
         $friendOf = $user->friendOf('pending')->get();
 
-        $combinedFriends = $friendsOfMine->merge($friendOf); // Menggunakan merge()
-        // dd($combinedFriends[0], $combinedFriends[1]);
+        $combinedFriends = $friendsOfMine->merge($friendOf);
+        // $combinedFriendsArray = $combinedFriends->toArray();
 
-        // Jika Anda hanya membutuhkan hasilnya dalam bentuk array
-        $combinedFriendsArray = $combinedFriends->toArray();
-
-        $friends = $combinedFriendsArray;
+        $friends = $combinedFriends;
 
         if (count($friends) == 0) {
             return Helper::APIResponse('Data empty', 200, null, null);
@@ -157,17 +154,14 @@ class UserController extends Controller
         $friendOf = $user->friendOf('accept')->get();
 
         $combinedFriends = $friendsOfMine->merge($friendOf);
+        // $combinedFriendsArray = $combinedFriends->toArray();
 
-        $combinedFriendsArray = $combinedFriends->toArray();
-
-        $friends = $combinedFriendsArray;
+        $friends = $combinedFriends;
 
         foreach ($friends as &$friend) {
-            // dd($friend);
             $friend['sameSchool'] = $friend['school_id'] == $user->school_id;
         }
 
-        // dd($friends);
         return Helper::APIResponse('Success get all friends', 200, null, $friends);
     }
 

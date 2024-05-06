@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('friendships', function (Blueprint $table) {
             $table->uuid('id');
-            $table->uuid('request_friendship');
-            $table->uuid('accept_friendship');
+            $table->uuid('user_id');
+            $table->uuid('friend_id');
             $table->enum('status', ['pending', 'accept', 'reject'])->default('pending');
             $table->timestamps();
 
-            $table->foreign('request_friendship')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('accept_friendship')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('friend_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

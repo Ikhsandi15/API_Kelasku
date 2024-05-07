@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FirebaseController;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WhatsAppController;
@@ -12,6 +13,7 @@ Route::prefix('/v1')->group(function () {
     Route::prefix('/auth')->group(function () {
         Route::post('/register', [AuthController::class, 'register']);
         Route::post('/login', [AuthController::class, 'login']);
+        Route::put('/success-login', [AuthController::class, 'successLogin'])->middleware('auth:sanctum');
         Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
     });
 
@@ -31,9 +33,9 @@ Route::prefix('/v1')->group(function () {
                     Route::get('/details/{friend_id}', 'friendDetail');
                 });
                 Route::put('/update-password', [AuthController::class, 'passwordUpdate']);
-                Route::get('/colek', 'colek');
             });
         });
+        Route::get('/colek/{regId}', [FirebaseController::class, 'sendMessageToAndroid'])->middleware('auth:sanctum');
         Route::get('/whatsapp/{phone}', [WhatsAppController::class, 'sendMessage'])->middleware('auth:sanctum');
     });
 

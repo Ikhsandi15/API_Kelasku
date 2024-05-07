@@ -55,8 +55,7 @@ class AuthController extends Controller
     {
         $validation = Validator::make($req->all(), [
             'phone_number' => 'required|min:12',
-            'password' => 'required|min:8',
-            'regid' => 'required'
+            'password' => 'required|min:8'
         ]);
 
         if ($validation->fails()) {
@@ -73,12 +72,22 @@ class AuthController extends Controller
             return Helper::APIResponse('password not match', 422, 'error password validate', null);
         }
 
-        $user->regId = $req->regid;
         $user->save();
 
         $user['token'] = $user->createToken('user_token')->plainTextToken;
 
         return Helper::APIResponse('Login Success', 200, null, $user);
+    }
+
+    // send the regId to db if login is success
+    public function successLogin(Request $req)
+    {
+        $user = User::where('id', Auth::id())->first();
+
+        $regId = $req->regId;
+
+        $user->regId = $regId;
+        $user->update();
     }
 
     public function logout(Request $req)

@@ -20,12 +20,12 @@
 									{
 										"key": "Accept",
 										"value": "application/json",
-										"uuid": "69a651e7-6be2-404d-ab1b-f29cb825dad7"
+										"uuid": "9ecae687-021c-40a3-91c3-a4c007f3f2e8"
 									},
 									{
 										"key": "Authorization",
 										"value": "Bearer ",
-										"uuid": "358db5e4-5e6c-480e-a067-563ecbfd2e7e"
+										"uuid": "90ce518d-c799-4d9f-b5c4-81d92dd50996"
 									}
 								],
 								"url": {
@@ -50,19 +50,19 @@
 							"response": []
 						},
 						{
-							"name": "Get All Request Friendship",
+							"name": "Get All My Request Friendship",
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",
 										"value": "application/json",
-										"uuid": "1e1b608f-2103-4ebc-aa10-1b53875da7ad"
+										"uuid": "ac68a513-8ac6-4a5d-b1a2-bff3e03dfa4c"
 									},
 									{
 										"key": "Authorization",
 										"value": "Bearer ",
-										"uuid": "87cc31f3-e616-4fd5-baf3-01789378b716"
+										"uuid": "83a977c2-98eb-4eeb-b7a9-42118122b9f8"
 									}
 								],
 								"url": {
@@ -87,44 +87,6 @@
 							"response": []
 						},
 						{
-							"name": "Accept Friendship Validation Error",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"uuid": "8453b851-6542-4cc5-811c-a5422321a992"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer 4|JJJlVHd3QHFLJNDCkr8nG1nFHFGyp91UjTSdRBXLc89753a8",
-										"uuid": "0fc4ba7e-4895-47bc-bbd9-43a57c49299f"
-									}
-								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/v1/users/friendship/accept/0000000000",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"v1",
-										"users",
-										"friendship",
-										"accept",
-										"0000000000"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Accept Friendship",
 							"request": {
 								"method": "PUT",
@@ -132,12 +94,12 @@
 									{
 										"key": "Accept",
 										"value": "application/json",
-										"uuid": "c2ea6adc-f1ef-4973-92d9-1e705f88b136"
+										"uuid": "b9500c30-2453-458e-8e8e-3cee88730276"
 									},
 									{
 										"key": "Authorization",
 										"value": "Bearer ",
-										"uuid": "a8a1db67-26e0-4f08-8524-61a14cbd6022"
+										"uuid": "c4f9492b-6884-479b-a3a5-6c1b533e6328"
 									}
 								],
 								"url": {
@@ -160,7 +122,86 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Validation Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer "
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/v1/users/friendship/accept/0000000000",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"v1",
+												"users",
+												"friendship",
+												"accept",
+												"0000000000"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer "
+											}
+										],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/v1/users/friendship/accept/7e8295a7-7ba6-42b0-9f8b-e870014e0078",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"v1",
+												"users",
+												"friendship",
+												"accept",
+												"7e8295a7-7ba6-42b0-9f8b-e870014e0078"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
 						},
 						{
 							"name": "My Relationship",
@@ -170,12 +211,12 @@
 									{
 										"key": "Accept",
 										"value": "application/json",
-										"uuid": "1e5cdc71-0f7e-43af-b72e-ac79905997d8"
+										"uuid": "fa856a9c-ad5f-4df4-9561-ae871b30f978"
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer ",
-										"uuid": "e82799e5-89d1-4801-b60b-4f1b9d72a70a"
+										"value": "Bearer",
+										"uuid": "261ae8b1-daa0-4dc1-9d12-723fb93cad2f"
 									}
 								],
 								"url": {
@@ -206,12 +247,12 @@
 									{
 										"key": "Accept",
 										"value": "application/json",
-										"uuid": "4418de00-de06-4045-aa47-d96e910f9e74"
+										"uuid": "ec7b6673-58c8-46f1-ba63-c6b7dfc9ddf3"
 									},
 									{
 										"key": "Authorization",
 										"value": "Bearer ",
-										"uuid": "4bc31738-d4aa-49cc-80b8-549f172222ba"
+										"uuid": "b66ba69e-64bd-45b1-8d17-4ba2b6f31e14"
 									}
 								],
 								"url": {
@@ -239,75 +280,7 @@
 					]
 				},
 				{
-					"name": "0. Register Number & Pass Validation",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Rio Susilo\",\r\n    \"school_id\": \"8e99e7b5-3945-4647-9c0f-861d9aa3f905\",\r\n    \"phone_number\": \"678905432112\",\r\n    \"password\": \"00000000\",\r\n    \"password_confirmation\": \"00000000\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/auth/register",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"auth",
-								"register"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "1. Register Validation Error",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/auth/register",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"auth",
-								"register"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "2. Register Success",
+					"name": "Register",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -338,16 +311,128 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Validation Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/auth/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Number & Pass Validation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Rio Susilo\",\r\n    \"school_id\": \"8e99e7b5-3945-4647-9c0f-861d9aa3f905\",\r\n    \"phone_number\": \"678905432112\",\r\n    \"password\": \"00000000\",\r\n    \"password_confirmation\": \"00000000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/auth/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Rio Susilo\",\r\n    \"school_id\": \"8e99e7b5-3945-4647-9c0f-861d9aa3f905\",\r\n    \"phone_number\": \"098765432112\",\r\n    \"password\": \"412t$G700\",\r\n    \"password_confirmation\": \"412t$G700\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/auth/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
 				},
 				{
-					"name": "3. Login Validation Error",
+					"name": "Login",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
+							"raw": "{\r\n    \"phone_number\": \"876543219009\",\r\n    \"password\": \"12#As67&\",\r\n    \"regid\": \"r8XyT7o2JlN:APA91bEgw3VvVcEpeQ4FxPqXxEh5F8w8F3L0Iexze9Np3L8oYwCS8-9BMf3b7dSw5uvGwUwA5RQ8UXKmJwz2hBpoZN4ZGgHRPqUM0Xij3D1d9wqR9ml1jRw-abcdefghij12345678901234567890\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -372,112 +457,168 @@
 							]
 						}
 					},
-					"response": []
-				},
-				{
-					"name": "4. Login Pass Not Match",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"phone_number\": \"678905432111\",\r\n    \"password\": \"12345678\",\r\n    \"regid\": \"123\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+					"response": [
+						{
+							"name": "Password Not Match",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone_number\": \"678905432112\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
 								}
-							}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/auth/login",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"auth",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "5. Login Wrong",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"phone_number\": \"555555555555\",\r\n    \"password\": \"123a$G7G\",\r\n    \"regid\": \"123\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+						{
+							"name": "Login Wrong",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone_number\": \"555555555555\",\r\n    \"password\": \"123a$G7G\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
 								}
-							}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/auth/login",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"auth",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "6. Login success",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"phone_number\": \"678905432112\",\r\n    \"password\": \"123a$G7G\",\r\n    \"regid\": \"123\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone_number\": \"678905432112\",\r\n    \"password\": \"123a$G7G\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
 								}
-							}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/auth/login",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"auth",
-								"login"
-							]
+						{
+							"name": "Success Login Send RegID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"regId\": \"c5TkX9q7IhM:APA91bFRe8EQYv8aE97m6wv3aBl7TfaXjAyE4w4t6mMB70zLs5Xq2pm-WmJbgm8yJIR_8_Zcf5PAG58cDX7av7ZlGr2Uxu0cqAxRUf6POfL7jwDkjVStxzwL-12345678901234567890\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/auth/success-login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"success-login"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "8. Get All Users",
+					"name": "Get All Users",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -501,19 +642,19 @@
 					"response": []
 				},
 				{
-					"name": "9. My Profile",
+					"name": "My Profile",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
 								"value": "application/json",
-								"uuid": "b9ce98c4-a899-480e-8192-80c7e21857ab"
+								"uuid": "b0e20a20-60b8-4352-aeca-35d94c586b38"
 							},
 							{
 								"key": "Authorization",
 								"value": "Bearer ",
-								"uuid": "01c35521-2306-4a77-b978-c2cc9ff0015d"
+								"uuid": "34833499-06bf-4ba1-a237-14d2fbe8a0a5"
 							}
 						],
 						"url": {
@@ -537,118 +678,24 @@
 					"response": []
 				},
 				{
-					"name": "10. Update Validation Error",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"uuid": "bef8a817-376d-4bea-ab7a-116b38729096"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer",
-								"uuid": "247a0d75-3396-45aa-9b19-d3ea13c0554c"
-							}
-						],
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/users/profile/update",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"profile",
-								"update"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "11. Update Without Image",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"uuid": "96c4957d-e78f-4cfe-9935-90ff9dc08e0d"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer 3|4VROezuDVDQFuZ7ChSEs5U9LQzLFPfi5yuxxEVDA95dd4e6c",
-								"uuid": "159c0edf-5adb-463d-a165-c9fbfa6effcd"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "Bambang Wicaksono",
-									"type": "text"
-								},
-								{
-									"key": "school_id",
-									"value": "bcd5695c-89ea-4c58-bc49-bc1562970ed1",
-									"type": "text"
-								},
-								{
-									"key": "phone_number",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/users/profile",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"profile"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "12. Update With Image",
+					"name": "Update User",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Accept",
 								"value": "application/json",
-								"uuid": "e8ba88cc-c779-4511-87c3-e635712da253"
+								"uuid": "b51acee4-9637-482b-91fa-f885d2568c41"
 							},
 							{
 								"key": "Authorization",
 								"value": "Bearer 3|4VROezuDVDQFuZ7ChSEs5U9LQzLFPfi5yuxxEVDA95dd4e6c",
-								"uuid": "f10cac98-86d6-47ac-ba4e-c274b2a2e4ab"
+								"uuid": "5787b889-681c-4406-bbe7-a6bd558b8b8e"
 							},
 							{
 								"key": "X-HTTP-Method-Override",
 								"value": "PUT",
-								"uuid": "02e3df69-1993-465e-9b9b-1048c0138ce5"
+								"uuid": "43adbdc5-69a8-4c01-818b-9bf897664d44"
 							}
 						],
 						"body": {
@@ -679,103 +726,181 @@
 							]
 						}
 					},
-					"response": []
-				},
-				{
-					"name": "13. Update Pass Validation Error",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"uuid": "b1bc6c69-b3cd-4ee6-9520-3ed5d403fbda"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer",
-								"uuid": "16093df4-c6a1-4745-93be-45f0933770b8"
-							}
-						],
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/users/update-password",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"update-password"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "14. Update Pass Not Match",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"uuid": "0a60621e-c572-459e-9441-1e315bf9b43e"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer",
-								"uuid": "c15e7375-9ed8-4dc9-b13e-30b37fa12c41"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"old_password\": \"*9&76sA3\",\r\n    \"new_password\": \"1@#4SgT8\",\r\n    \"new_password_confirmation\": \"00000000\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+					"response": [
+						{
+							"name": "Validation Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "X-HTTP-Method-Override",
+										"value": "PUT"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/users/profile",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"profile"
+									]
 								}
-							}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/users/update-password",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"update-password"
-							]
+						{
+							"name": "Without Image",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "X-HTTP-Method-Override",
+										"value": "PUT"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "school_id",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "phone_number",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/users/profile",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"profile"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "With Image",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "X-HTTP-Method-Override",
+										"value": "PUT"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profile",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/users/profile",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"profile"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "15. Update Password",
+					"name": "Update Password",
 					"request": {
 						"method": "PUT",
 						"header": [
 							{
 								"key": "Accept",
 								"value": "application/json",
-								"uuid": "5d84a405-4f56-4efa-804b-0a20755f3502"
+								"uuid": "d0a0ac2d-00ea-42b9-8db4-26eb2d0d3e69"
 							},
 							{
 								"key": "Authorization",
 								"value": "Bearer 2|Tvkx4923D4eNZwZccqWc60T38nW3mw5ICKfGAQADe9bc5417",
-								"uuid": "eb78e8dd-f245-4ed1-b815-3b0a919adaff"
+								"uuid": "d59a48ad-8ac5-46ef-9abb-9e0ddb5ecbc5"
 							}
 						],
 						"body": {
@@ -805,60 +930,161 @@
 							]
 						}
 					},
-					"response": []
-				},
-				{
-					"name": "16. MyFriend Biodata Not Found",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"uuid": "f7df5de2-1a86-4767-97ca-d072450054e8"
+					"response": [
+						{
+							"name": "Validation Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/users/update-password",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"update-password"
+									]
+								}
 							},
-							{
-								"key": "Authorization",
-								"value": "Bearer",
-								"uuid": "f55a94fa-dcd6-4ccf-8ee1-19b7cff30821"
-							}
-						],
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/users/friendship/details/0000000000",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"friendship",
-								"details",
-								"0000000000"
-							]
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Pass Not Match",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"old_password\": \"*9&76sA3\",\r\n    \"new_password\": \"1@#4SgT8\",\r\n    \"new_password_confirmation\": \"00000000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/users/update-password",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"update-password"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"old_password\": \"*9&76sA3\",\r\n    \"new_password\": \"1@#4SgT8\",\r\n    \"new_password_confirmation\": \"1@#4SgT8\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/users/update-password",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"update-password"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "17. MyFriend Biodata",
+					"name": "MyFriend Biodata",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
 								"value": "application/json",
-								"uuid": "c3788a77-4ad1-4dd1-9b7e-f6bc0cc0da2e"
+								"uuid": "63d017ab-0d6c-43c5-a417-469f1ef2d703"
 							},
 							{
 								"key": "Authorization",
 								"value": "Bearer ",
-								"uuid": "79d976a6-d2b8-48ca-98bb-509f484b1fed"
+								"uuid": "3bbf99a7-61a8-45ef-aae1-7bc3e08db102"
 							}
 						],
 						"url": {
@@ -881,7 +1107,86 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/users/friendship/details/bccf2bdc-1010-4a96-9503-a0f7a1a67a75",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"friendship",
+										"details",
+										"bccf2bdc-1010-4a96-9503-a0f7a1a67a75"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/users/friendship/details/000000000",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"friendship",
+										"details",
+										"000000000"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
 				},
 				{
 					"name": "Colek",
@@ -891,16 +1196,16 @@
 							{
 								"key": "Accept",
 								"value": "application/json",
-								"uuid": "fb26b4b2-8c9a-46be-ac06-3eaeb1580731"
+								"uuid": "e370ef60-3c89-4677-9ca3-315093563a80"
 							},
 							{
 								"key": "Authorization",
 								"value": "Bearer ",
-								"uuid": "1ce1709f-72a0-4973-b811-36d2ab976639"
+								"uuid": "08ed34d1-8ae0-4c3d-b162-4d1a2fc3ea9c"
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/users/colek?regId=t9QpM7o2JlX:APA91bFGcUOgbmC7zTb7oc5_Bq1FYKpr7EQiuPb7dbuoe2iQRU2Af8N15w3m-D5m-JP5mZoXDbAOnw7PxiTWidgglLP2IK0PT9fP1wXkSdYkNPc4ruOM_P8x-klmnopqrstuvwxy1234567890",
+							"raw": "http://127.0.0.1:8000/api/v1/users/colek/t9QpM7o2JlX:APA91bFGcUOgbmC7zTb7oc5_Bq1FYKpr7EQiuPb7dbuoe2iQRU2Af8N15w3m-D5m-JP5mZoXDbAOnw7PxiTWidgglLP2IK0PT9fP1wXkSdYkNPc4ruOM_P8x-klmnopqrstuvwxy1234567890",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -913,13 +1218,8 @@
 								"api",
 								"v1",
 								"users",
-								"colek"
-							],
-							"query": [
-								{
-									"key": "regId",
-									"value": "t9QpM7o2JlX:APA91bFGcUOgbmC7zTb7oc5_Bq1FYKpr7EQiuPb7dbuoe2iQRU2Af8N15w3m-D5m-JP5mZoXDbAOnw7PxiTWidgglLP2IK0PT9fP1wXkSdYkNPc4ruOM_P8x-klmnopqrstuvwxy1234567890"
-								}
+								"colek",
+								"t9QpM7o2JlX:APA91bFGcUOgbmC7zTb7oc5_Bq1FYKpr7EQiuPb7dbuoe2iQRU2Af8N15w3m-D5m-JP5mZoXDbAOnw7PxiTWidgglLP2IK0PT9fP1wXkSdYkNPc4ruOM_P8x-klmnopqrstuvwxy1234567890"
 							]
 						}
 					},
@@ -933,12 +1233,12 @@
 							{
 								"key": "Accept",
 								"value": "application/json",
-								"uuid": "0e6684c2-531d-430c-895a-566116acce1d"
+								"uuid": "bd19c74b-b138-466d-9ef9-18d7f1708a49"
 							},
 							{
 								"key": "Authorization",
 								"value": "Bearer ",
-								"uuid": "957bbcd2-5713-4af4-8973-6137962d1ab7"
+								"uuid": "40eb0696-53a7-4c80-b766-594047011c02"
 							}
 						],
 						"url": {
@@ -991,31 +1291,6 @@
 					"response": []
 				},
 				{
-					"name": "Detail School Not Found",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/schools/05cfb4d5-33c2-4ac9-9d58-c329d41cf5b900000",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"schools",
-								"05cfb4d5-33c2-4ac9-9d58-c329d41cf5b900000"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Detail School",
 					"request": {
 						"method": "GET",
@@ -1038,42 +1313,64 @@
 							]
 						}
 					},
-					"response": []
-				},
-				{
-					"name": "Create School Validation Error",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"uuid": "65b6d814-e5b3-4650-8c1c-8081354504ce"
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/schools/05cfb4d5-33c2-4ac9-9d58-c329d41cf5b900000",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"schools",
+										"05cfb4d5-33c2-4ac9-9d58-c329d41cf5b900000"
+									]
+								}
 							},
-							{
-								"key": "Authorization",
-								"value": "Bearer",
-								"uuid": "c7e0be10-6133-48d2-96ff-7df737b17fc8"
-							}
-						],
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/schools",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"schools"
-							]
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/schools/05cfb4d5-33c2-4ac9-9d58-c329d41cf5b9",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"schools",
+										"05cfb4d5-33c2-4ac9-9d58-c329d41cf5b9"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
 						}
-					},
-					"response": []
+					]
 				},
 				{
 					"name": "Create School",
@@ -1083,12 +1380,12 @@
 							{
 								"key": "Accept",
 								"value": "application/json",
-								"uuid": "3c07a4fa-1aa6-4983-a3c8-463ae8621f71"
+								"uuid": "4d601a1d-8f3f-4b98-9c03-2274633948ac"
 							},
 							{
 								"key": "Authorization",
 								"value": "Bearer ",
-								"uuid": "dca0bb1b-91b3-46df-ba07-7c55feed28ba"
+								"uuid": "10e4163a-d256-44b1-88e0-a9bb45dc29cb"
 							}
 						],
 						"body": {
@@ -1117,52 +1414,98 @@
 							]
 						}
 					},
-					"response": []
-				},
-				{
-					"name": "Update School Validation Error",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"uuid": "7452bc4f-cd2c-4ea1-be1f-ffc9bdba65f0"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer",
-								"uuid": "e86057c6-866a-4044-9ab7-63f5ca36fe33"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
+					"response": [
+						{
+							"name": "Validation Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/schools",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"schools"
+									]
 								}
-							}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
 						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/schools/05cfb4d5-33c2-4ac9-9d58-c329d41cf5b9",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"schools",
-								"05cfb4d5-33c2-4ac9-9d58-c329d41cf5b9"
-							]
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"school_name\": \"SMAN 4 Purwokerto\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/schools",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"schools"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
 						}
-					},
-					"response": []
+					]
 				},
 				{
 					"name": "Update School",
@@ -1172,12 +1515,12 @@
 							{
 								"key": "Accept",
 								"value": "application/json",
-								"uuid": "f347516f-2000-416a-8060-9f776346803b"
+								"uuid": "e0402927-0a34-4442-b60c-8e986148c8e5"
 							},
 							{
 								"key": "Authorization",
 								"value": "Bearer 5|wgNFMrNUa0uzx8EODkeO2F3ZV6oLuWhITWSnPFEP6b396124",
-								"uuid": "d33be87f-495a-4bf7-aa10-d11c30b9f1bb"
+								"uuid": "c4982c4a-ae7b-4bdb-8a24-915115985b8b"
 							}
 						],
 						"body": {
@@ -1207,43 +1550,100 @@
 							]
 						}
 					},
-					"response": []
-				},
-				{
-					"name": "Delete School Not Found",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"uuid": "e0c74f8c-1a01-4ddb-97a3-9f086e3b6955"
+					"response": [
+						{
+							"name": "Validation Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/schools/05cfb4d5-33c2-4ac9-9d58-c329d41cf5b9",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"schools",
+										"05cfb4d5-33c2-4ac9-9d58-c329d41cf5b9"
+									]
+								}
 							},
-							{
-								"key": "Authorization",
-								"value": "Bearer",
-								"uuid": "f853ffaa-8c72-444a-b8cd-8622ab31449a"
-							}
-						],
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/v1/schools/00000000000",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"schools",
-								"00000000000"
-							]
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"school_name\": \"SMKN Update Purwokerto\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/schools/05cfb4d5-33c2-4ac9-9d58-c329d41cf5b9",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"schools",
+										"05cfb4d5-33c2-4ac9-9d58-c329d41cf5b9"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
 						}
-					},
-					"response": []
+					]
 				},
 				{
 					"name": "Delete school",
@@ -1253,12 +1653,12 @@
 							{
 								"key": "Accept",
 								"value": "application/json",
-								"uuid": "b0d43ec9-dcd7-4c53-8d09-e6dea8d7db71"
+								"uuid": "ddb22536-f7e0-4b1c-87b4-efa4f08d6c5d"
 							},
 							{
 								"key": "Authorization",
 								"value": "Bearer",
-								"uuid": "07206bf7-b309-4a3b-8fdb-bd55f72f3d44"
+								"uuid": "34a57d5b-01ce-4937-a530-bd0a3bbcb1dd"
 							}
 						],
 						"url": {
@@ -1279,7 +1679,82 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/schools/000000000",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"schools",
+										"000000000"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/schools/05cfb4d5-33c2-4ac9-9d58-c329d41cf5b9",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"schools",
+										"05cfb4d5-33c2-4ac9-9d58-c329d41cf5b9"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
 				}
 			]
 		},
@@ -1291,12 +1766,12 @@
 					{
 						"key": "Accept",
 						"value": "application/json",
-						"uuid": "4007d25c-f1f3-47d7-8643-43d5e75eba95"
+						"uuid": "4b632a88-d78c-4205-a5af-89a1e7bf3a1d"
 					},
 					{
 						"key": "Authorization",
 						"value": "Bearer ",
-						"uuid": "5bca385a-681c-4264-b9c2-262bcdffd056"
+						"uuid": "8750f45f-381e-4da5-8c9d-27ba348f95e9"
 					}
 				],
 				"url": {

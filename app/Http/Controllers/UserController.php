@@ -110,13 +110,9 @@ class UserController extends Controller
     {
         $user = User::where('id', Auth::id())->first();
 
-        $friendsOfMine = $user->friendsOfMine('pending')->get();
         $friendOf = $user->friendOf('pending')->get();
 
-        $combinedFriends = $friendsOfMine->merge($friendOf);
-        // $combinedFriendsArray = $combinedFriends->toArray();
-
-        $friends = $combinedFriends;
+        $friends = $friendOf;
 
         if (count($friends) == 0) {
             return Helper::APIResponse('Data empty', 200, null, null);
@@ -136,7 +132,7 @@ class UserController extends Controller
 
     public function acceptFriendship($id)
     {
-        $data = Friendship::where('friend_id', Auth::user()->id)->where('id', $id)->first();
+        $data = Friendship::where('user_id', Auth::user()->id)->where('id', $id)->first();
         if (!$data) {
             return Helper::APIResponse('Failed accepted friendship, user not have relationship request', 400, 'Bad Request', null);
         }

@@ -87,78 +87,116 @@ class UserController extends Controller
         return Helper::APIResponse('Success update data', 200, null, $data);
     }
 
-    // friends
+    /**
+     * Membuat atau membatalkan permintaan pertemanan.
+     *
+     * @param  int  $target_id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function requestFriendship($target_id)
     {
-        $isCreateReq = Friendship::where('user_id', Auth::user()->id)->where('friend_id', $target_id)->first();
-        if ($isCreateReq) {
-            $isCreateReq->delete();
-            return Helper::APIResponse('Success cancel request', 200, null, null);
+        $isExist = User::where("id", $target_id)->first();
+        // dd($isExist);
+        if (!$isExist) {
+            return Helper::APIResponse('ID user tidak ditemukan', 200, null, null);
+        }
+
+        $currentUserId = Auth::user()->id;
+        $existingRequest = Friendship::where('user_id', $currentUserId)
+            ->where('friend_id', $target_id)
+            ->first();
+
+        if ($existingRequest) {
+            $existingRequest->delete();
+            return Helper::APIResponse('Permintaan pertemanan dibatalkan', 200, null, null);
         }
 
         $data = Friendship::create([
             'id' => Str::uuid(),
-            'user_id' => Auth::user()->id,
+            'user_id' => $currentUserId,
             'friend_id' => $target_id,
             'status' => 'pending'
         ]);
 
-        return Helper::APIResponse('Success create request', 200, null, $data);
+        return Helper::APIResponse('Permintaan pertemanan dibuat', 200, null, $data);
     }
 
+    /**
+     * Mendapatkan semua permintaan pertemanan yang diterima pengguna.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getAllRequestFriendship()
     {
-        $user = User::where('id', Auth::id())->first();
+        $user = User::where("id", Auth::id())->first();
+        $friendRequests = $user->friendOf('pending')->get();
 
-        $friendOf = $user->friendOf('pending')->get();
-
-        $friends = $friendOf;
-
-        if (count($friends) == 0) {
-            return Helper::APIResponse('Data empty', 200, null, null);
+        if ($friendRequests->isEmpty()) {
+            return Helper::APIResponse('Tidak ada data', 200, null, null);
         }
 
-        return Helper::APIResponse('Success get all friendship', 200, null, $friends);
+        return Helper::APIResponse('Berhasil mendapatkan semua permintaan pertemanan', 200, null, $friendRequests);
     }
 
+    /**
+     * Menolak permintaan pertemanan.
+     *
+     * @param  string  $id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function rejectFriendship($id)
     {
-        $data = Friendship::where('id', $id)->delete();
-        if (!$data) {
-            return Helper::APIResponse('Failed rejected friendship', 404, "data not found", null);
+        $friendship = Friendship::find($id);
+
+        if (!$friendship) {
+            return Helper::APIResponse('Permintaan pertemanan tidak ditemukan', 404, 'Data tidak ditemukan', null);
         }
-        return Helper::APIResponse('Success rejected friendship', 200, null, $data);
+
+        $friendship->delete();
+        return Helper::APIResponse('Permintaan pertemanan ditolak', 200, null, null);
     }
 
+    /**
+     * Menerima permintaan pertemanan.
+     *
+     * @param  string  $id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function acceptFriendship($id)
     {
-        $data = Friendship::where('user_id', Auth::user()->id)->where('id', $id)->first();
-        if (!$data) {
-            return Helper::APIResponse('Failed accepted friendship, user not have relationship request', 400, 'Bad Request', null);
-        }
-        $data->status = 'accept';
-        $data->save();
+        $currentUserId = Auth::user()->id;
+        $friendship = Friendship::where('friend_id', $currentUserId)
+            ->where('id', $id)
+            ->first();
 
-        return Helper::APIResponse('Success accepted friendship', 200, null, $data);
+        if (!$friendship) {
+            return Helper::APIResponse('Gagal menerima pertemanan, permintaan tidak ditemukan', 400, 'Bad Request', null);
+        }
+
+        $friendship->status = 'accepted';
+        $friendship->save();
+
+        return Helper::APIResponse('Permintaan pertemanan diterima', 200, null, $friendship);
     }
 
+    /**
+     * Mendapatkan semua teman yang sudah diterima.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function getAllMyFriends()
     {
-        $user = User::where('id', Auth::id())->first();
+        $user = User::where("id", Auth::id())->first();
+        $friendsOfMine = $user->friendsOfMine('accepted')->get();
+        $friendsOf = $user->friendOf('accepted')->get();
 
-        $friendsOfMine = $user->friendsOfMine('accept')->get();
-        $friendOf = $user->friendOf('accept')->get();
+        $allFriends = $friendsOfMine->merge($friendsOf);
 
-        $combinedFriends = $friendsOfMine->merge($friendOf);
-        // $combinedFriendsArray = $combinedFriends->toArray();
-
-        $friends = $combinedFriends;
-
-        foreach ($friends as &$friend) {
+        foreach ($allFriends as &$friend) {
             $friend['sameSchool'] = $friend['school_id'] == $user->school_id;
         }
 
-        return Helper::APIResponse('Success get all friends', 200, null, $friends);
+        return Helper::APIResponse('Berhasil mendapatkan semua teman', 200, null, $allFriends);
     }
 
     public function friendDetail($friend_id)

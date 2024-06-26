@@ -36,7 +36,7 @@ class AuthController extends Controller
         ], $validateMsg);
 
         if ($validation->fails()) {
-            return Helper::APIResponse('error validation', 422, null, $validation->errors());
+            return Helper::APIResponse('error validation', 422, $validation->errors(), null);
         }
 
         $password = Hash::make($req->password);

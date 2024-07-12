@@ -21,7 +21,7 @@ class AuthController extends Controller
 
         $validation = Validator::make($req->all(), [
             'name' => 'required',
-            'phone_number' => 'required|unique:users|min:12',
+            'phone_number' => 'required|unique:users|min:12|max:12',
             'school_id' => 'required',
             'password' => [
                 'required',
@@ -72,8 +72,6 @@ class AuthController extends Controller
             return Helper::APIResponse('password not match', 422, 'error password validate', null);
         }
 
-        $user->save();
-
         $user['token'] = $user->createToken('user_token')->plainTextToken;
 
         return Helper::APIResponse('Login Success', 200, null, $user);
@@ -88,6 +86,7 @@ class AuthController extends Controller
 
         $user->regId = $regId;
         $user->update();
+        return Helper::APIResponse('success send regid', 200, null, $user->name);
     }
 
     public function logout(Request $req)

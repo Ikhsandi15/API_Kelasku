@@ -22,6 +22,6 @@ class Friendship extends Model
 
     public function user()
     {
-        return $this->hasMany(Friendship::class, 'accept_friendship', 'request_friendship');
+        return $this->belongsTo(User::class, 'friend_id');
     }
 }

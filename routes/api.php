@@ -30,8 +30,8 @@ Route::prefix('/v1')->group(function () {
                     Route::delete('/reject/{id}', 'rejectFriendship');
                     Route::put('/accept/{id}', 'acceptFriendship');
                     Route::get('/', 'getAllMyFriends');
-                    Route::get('/details/{friend_id}', 'friendDetail');
                 });
+                Route::get('/details/{friend_id}', 'friendDetail');
                 Route::put('/update-password', [AuthController::class, 'passwordUpdate']);
             });
         });

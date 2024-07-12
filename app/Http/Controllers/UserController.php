@@ -111,6 +111,7 @@ class UserController extends Controller
             return Helper::APIResponse('Permintaan pertemanan dibatalkan', 200, null, null);
         }
 
+        $target_name = User::where('id', $target_id)->first();
         $data = Friendship::create([
             'id' => Str::uuid(),
             'user_id' => $currentUserId,
@@ -118,7 +119,15 @@ class UserController extends Controller
             'status' => 'pending'
         ]);
 
-        return Helper::APIResponse('Permintaan pertemanan dibuat', 200, null, $data);
+        $datas = [
+            'id' => $data->id,
+            'user_id' => $currentUserId,
+            'friend_id' => $target_id,
+            'friend_name' => $target_name->name,
+            'status' => $data->status
+        ];
+
+        return Helper::APIResponse('Permintaan pertemanan dibuat', 200, null, $datas);
     }
 
     /**
@@ -144,17 +153,38 @@ class UserController extends Controller
      * @param  string  $id
      * @return \Illuminate\Http\JsonResponse
      */
+    /**
+     * Menolak permintaan pertemanan.
+     *
+     * @param  string  $id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function rejectFriendship($id)
     {
-        $friendship = Friendship::find($id);
+        $currentUserId = Auth::user()->id;
+        $friendship = Friendship::with('user')
+            ->where('friend_id', $currentUserId)
+            ->where('id', $id)
+            ->first();
 
         if (!$friendship) {
             return Helper::APIResponse('Permintaan pertemanan tidak ditemukan', 404, 'Data tidak ditemukan', null);
         }
 
+        $datas = [
+            'id' => $friendship->id,
+            'req_id' => $friendship->user_id,
+            'req_name' => User::where('id', $friendship->user_id)->pluck('name')->first(),
+            'your_id' => $friendship->friend_id,
+            'your_name' => User::where('id', $friendship->friend_id)->pluck('name')->first(),
+            'status' => 'rejected'
+        ];
+
         $friendship->delete();
-        return Helper::APIResponse('Permintaan pertemanan ditolak', 200, null, null);
+
+        return Helper::APIResponse('Permintaan pertemanan ditolak', 200, null, $datas);
     }
+
 
     /**
      * Menerima permintaan pertemanan.
@@ -165,7 +195,7 @@ class UserController extends Controller
     public function acceptFriendship($id)
     {
         $currentUserId = Auth::user()->id;
-        $friendship = Friendship::where('friend_id', $currentUserId)
+        $friendship = Friendship::with('user')->where('friend_id', $currentUserId)
             ->where('id', $id)
             ->first();
 
@@ -173,10 +203,19 @@ class UserController extends Controller
             return Helper::APIResponse('Gagal menerima pertemanan, permintaan tidak ditemukan', 400, 'Bad Request', null);
         }
 
-        $friendship->status = 'accepted';
+        $friendship->status = 'accept';
         $friendship->save();
 
-        return Helper::APIResponse('Permintaan pertemanan diterima', 200, null, $friendship);
+        $datas = [
+            'id' => $friendship->id,
+            'req_id' => $friendship->user_id,
+            'req_name' => User::where('id', $friendship->user_id)->pluck('name'),
+            'your_id' => $friendship->friend_id,
+            'your_name' => User::where('id', $friendship->friend_id)->pluck('name'),
+            'status' => $friendship->status
+        ];
+
+        return Helper::APIResponse('Permintaan pertemanan diterima', 200, null, $datas);
     }
 
     /**
@@ -187,8 +226,8 @@ class UserController extends Controller
     public function getAllMyFriends()
     {
         $user = User::where("id", Auth::id())->first();
-        $friendsOfMine = $user->friendsOfMine('accepted')->get();
-        $friendsOf = $user->friendOf('accepted')->get();
+        $friendsOfMine = $user->friendsOfMine('accept')->get();
+        $friendsOf = $user->friendOf('accept')->get();
 
         $allFriends = $friendsOfMine->merge($friendsOf);
 
@@ -203,9 +242,9 @@ class UserController extends Controller
     {
         $user = User::where('id', $friend_id)->first();
         if ($user) {
-            return Helper::APIResponse('Get detail friend', 200, null, $user);
+            return Helper::APIResponse('Get detail', 200, null, $user);
         }
-        return Helper::APIResponse('Failed detail friend', 404, 'data not found', null);
+        return Helper::APIResponse('Failed detail', 404, 'data not found', null);
     }
 
     public function colek(Request $req)

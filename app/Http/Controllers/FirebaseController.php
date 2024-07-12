@@ -28,14 +28,14 @@ class FirebaseController extends Controller
             'notification' => [
                 'title' => 'Hey kamu di colek',
                 'body' => 'Kamu di colek sama ' . $userName,
-            ],
+            ]
         ];
 
         try {
             // Mengirim permintaan POST ke FCM
             $response = $client->post('https://fcm.googleapis.com/fcm/send', [
                 'headers' => [
-                    'Authorization' => 'key=' . env('API_FCM_KEY'),
+                    'Authorization' => 'Bearer ' . env('API_FCM_KEY'),
                     'Content-Type' => 'application/json',
                 ],
                 'json' => $payload,

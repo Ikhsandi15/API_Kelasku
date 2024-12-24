@@ -1,9 +1,6 @@
 <?php
 
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\ColekController;
->>>>>>> 24a6f177ab86dedd7f546b9244350683ab42267f
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -39,26 +36,11 @@ Route::prefix('/v1')->group(function () {
                 Route::put('/update-password', [AuthController::class, 'passwordUpdate']);
             });
         });
-<<<<<<< HEAD
-        Route::get('/colek/{regId}', [FirebaseController::class, 'sendMessageToAndroid'])->middleware('auth:sanctum');
-=======
         Route::post('/colek', [ColekController::class, 'colek'])->middleware('auth:sanctum');
->>>>>>> 24a6f177ab86dedd7f546b9244350683ab42267f
         Route::get('/whatsapp/{phone}', [WhatsAppController::class, 'sendMessage'])->middleware('auth:sanctum');
     });
 
     Route::prefix('/schools')->controller(SchoolController::class)->group(function () {
-<<<<<<< HEAD
-      Route::middleware(['auth:sanctum', 'admin_access'])->group(function () {
-        Route::post('/', 'create');
-        Route::put('/{id}', 'update');
-        Route::delete('/{id}', 'delete');
-      });
-
-      Route::get('/', 'index');
-      Route::get('/{id}', 'show');
-   });
-=======
         Route::get('/', 'index');
         Route::get('/{id}', 'show');
 
@@ -68,5 +50,4 @@ Route::prefix('/v1')->group(function () {
             Route::delete('/{id}', 'delete');
         });
     });
->>>>>>> 24a6f177ab86dedd7f546b9244350683ab42267f
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\Messaging\CloudMessage;
 
@@ -25,7 +26,7 @@ class ColekController extends Controller
 
         $message = CloudMessage::withTarget('token', $validated['token'])
             ->withNotification([
-                'title' => 'Anda Dicolek!',
+                'title' => 'Anda Dicolek Oleh ' . Auth::user()->name,
                 'body' => $validated['message'],
             ]);
 

@@ -32,6 +32,11 @@ return [
     ],
 
     'firebase' => [
+<<<<<<< HEAD
+        'fcm_key' => env('API_FCM_KEY')
+=======
         'credentials' => storage_path('firebase-crendentials.json'),
+>>>>>>> 24a6f177ab86dedd7f546b9244350683ab42267f
     ]
+
 ];

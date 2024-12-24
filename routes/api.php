@@ -40,13 +40,13 @@ Route::prefix('/v1')->group(function () {
     });
 
     Route::prefix('/schools')->controller(SchoolController::class)->group(function () {
-        Route::get('/', 'index');
-        Route::get('/{id}', 'show');
+      Route::middleware(['auth:sanctum', 'admin_access'])->group(function () {
+        Route::post('/', 'create');
+        Route::put('/{id}', 'update');
+        Route::delete('/{id}', 'delete');
+      });
 
-        Route::middleware(['auth:sanctum', 'admin_access'])->group(function () {
-            Route::post('/', 'create');
-            Route::put('/{id}', 'update');
-            Route::delete('/{id}', 'delete');
-        });
-    });
+      Route::get('/', 'index');
+      Route::get('/{id}', 'show');
+   });
 });

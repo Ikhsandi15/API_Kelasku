@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ColekController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -35,7 +36,7 @@ Route::prefix('/v1')->group(function () {
                 Route::put('/update-password', [AuthController::class, 'passwordUpdate']);
             });
         });
-        Route::get('/colek/{regId}', [FirebaseController::class, 'sendMessageToAndroid'])->middleware('auth:sanctum');
+        Route::post('/colek', [ColekController::class, 'colek'])->middleware('auth:sanctum');
         Route::get('/whatsapp/{phone}', [WhatsAppController::class, 'sendMessage'])->middleware('auth:sanctum');
     });
 

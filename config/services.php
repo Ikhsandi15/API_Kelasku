@@ -32,7 +32,7 @@ return [
     ],
 
     'firebase' => [
-        'fcm_key' => env('API_FCM_KEY')
+        'credentials' => storage_path('firebase-crendentials.json'),
     ]
 
 ];

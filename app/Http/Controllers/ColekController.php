@@ -26,8 +26,7 @@ class ColekController extends Controller
 
         $message = CloudMessage::withTarget('token', $validated['token'])
             ->withNotification([
-                'title' => 'Anda Dicolek Oleh ' . Auth::user()->name,
-                'body' => $validated['message'],
+                'title' => $validated['messages'],
             ]);
 
         try {
